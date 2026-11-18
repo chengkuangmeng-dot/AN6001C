@@ -1,8 +1,9 @@
 # web app
-
+import joblib
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
+dbsModel = joblib.load('DBS_SGD.pkl')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
